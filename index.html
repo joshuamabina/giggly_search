@@ -1,46 +1,58 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Giggly Search</title>
-        <link href="style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <h1 class="logo">Giggly Search</h1>
-            </div>
-            <div class="row">
-                <form>
-                    <div class="row">
-                        <input type="text" placeholder="Type something fun to search" name="searchInput" class="search-input" id="searchInput"/>
-                    </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Giggly Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect rx="16" width="100" height="100" fill="%23FFDD57"/><text x="50" y="58" font-size="46" font-family="Arial" text-anchor="middle" fill="%23223">G</text></svg>' alt="Giggly logo">
+      <div>
+        <p class="title">Giggly Search</p>
+        <p class="subtitle">A playful search for tiny explorers and trailblazers.</p>
+      </div>
+    </div>
 
-                    <div class="row">
-                        <div class="search-filters">
-                            <div class="filter-item">
-                                <input type="checkbox" name="searchFilterImages" id="searchFilterImages">
-                                <label for="searchFilterImages">Include images</label>
-                            </div>
+    <!-- Paragraph demonstrating <p> -->
+    <p>Welcome to Giggly Search. This page shows common HTML elements, CSS and a little JavaScript.</p>
 
-                            <div class="filter-item">
-                                <input type="checkbox" name="searchFilterVideos" id="searchFilterVideos">
-                                <label for="searchFilterVideos">Include videos</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="action-buttons">
-                            <button class="btn-main" id="searchButton">Search</button>
-                            <button type="button">Clear</button>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
+    <!-- Search form demonstrating form, id, input, buttons -->
+    <div class="card">
+      <form id="searchForm">
+        <div class="search-wrap">
+          <input id="q" name="q" type="search" placeholder="Type something fun to search for..." aria-label="Search">
+          <button type="submit" class="btn btn-primary">Search</button>
+          <button type="button" class="btn btn-ghost" onclick="document.getElementById('q').value=''">Clear</button>
         </div>
-        <script src="main.js"></script>
-    </body>
-</html>
 
+        <!-- Checkboxes -->
+        <fieldset>
+          <legend>Search filters</legend>
+          <label><input type="checkbox" name="images" value="1"> Include images</label>
+          <label><input type="checkbox" name="videos" value="1"> Include videos</label>
+        </fieldset>
+
+        <!-- Radio buttons -->
+        <fieldset>
+          <legend>Result type</legend>
+          <label><input type="radio" name="type" value="all" checked> All</label>
+          <label><input type="radio" name="type" value="kids"> For kids</label>
+        </fieldset>
+
+        <!-- Select -->
+        <label>Sort by
+          <select name="sort">
+            <option value="relevance">Relevance</option>
+            <option value="newest">Newest</option>
+            <option value="popular">Most popular</option>
+          </select>
+        </label>
+      </form>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
