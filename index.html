@@ -1,28 +1,49 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Giggly Search</title>
         <link href="style.css" rel="stylesheet" />
     </head>
     <body>
-        <h1 class="logo">Giggly Search</h1>
-        <form>
-            <input type="text" placeholder="Type something fun to search" name="searchInput" class="searchInput" id="searchInput"/>
-            <br>
-            <input type="checkbox" name="searchFilters" class="searchFilters">Include images
-            <input type="checkbox" name="searchFilters" class="searchFilters">Include videos
-            <br>
-            <input type="radio" name="resultType" class="resultType">All
-            <input type="radio" name="resultType" class="resultType">Kids
-            <br>
-            <select name="sortBy">
-                <option value="Relevance">Relevance</option>
-                <option value="Newest">Newest</option>
-                <option value="Most Popular">Most Popular</option>
-            </select>
-            <br>
-            <button type="submit" style="background-color: darkblue; color: #fff" id="searchButton">Search</button>
-            <button type="button">Clear</button>
-        </form>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="advanced.html">Advanced Search</a></li>
+                </ul>
+            </nav>
+            <div class="row">
+                <h1 class="logo">Giggly Search</h1>
+            </div>
+            <div class="row">
+                <form action="https://google.com/search" method="get">
+                    <div class="row">
+                        <input type="search" name="q" class="search-input" id="searchInput" placeholder="Type something fun to search"/>
+                    </div>
+
+                    <div class="row">
+                        <div class="search-filters">
+                            <input type="hidden" name="q" value="for kids"/>
+                            <input type="hidden" name="safe" value="active"/>
+
+                            <div class="form-group">
+                                <label><input type="radio" name="type" value="all"> All</label>
+                                <label><input type="radio" name="type" value="kids" checked> For kids</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="action-buttons">
+                            <button class="btn-primary" id="searchButton">Search</button>
+                            <button class="btn-secondary" id="clearButton">Clear</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>
